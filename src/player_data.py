@@ -51,17 +51,16 @@ def get_player_nfl_stats(
                     
                     if year:
                         final_df = df.loc[df['year'] == year, ['year', stat_type]]
+                        return final_df.to_markdown()
                     else:
                         final_df = df.loc[:, ['year', stat_type]]
-
+                        return final_df.to_markdown()
+                else: 
+                    print(f"Please select a valid stat type")
+            else:
+                final_df = df 
+                return final_df.to_markdown()
         else:
             print(f"Please add space to player name")
     else:
         print(f"Oops, player not found. Please confirm spelling/format")
-
-
-
-def get_player_college_stats():
-    
-def get_player_combine_measurables():
-    
